@@ -7,29 +7,37 @@ var PupView = Backbone.View.extend ({
   },
 
   events: {
-
+    "click .delete": "removePup",
 
   },
 
   render: function () {
 
-    var markup = this.template(this.model.toJson());
+    var markup = this.template(this.model.toJSON());
     this.$el.html(markup);
 
     return this;
 
   },
 
+  removePup: function () {
+    this.$el.remove();
+    this.model.destroy();
+
+  }
+
+
+
 });
 
 
 ///COLLECTION VIEW
 
-var Appview = Backbone.View.extend ({
-  el:$('section'),
+var Appview = Backbone.View.extend({
+  el: $('section'),
   initialize: function () {
     console.log('app view initialized!');
-    //this.addAllPosts();
+  this.addAllPups();
 
 
 
@@ -37,13 +45,14 @@ var Appview = Backbone.View.extend ({
   },
   events: {
     "click .signup": "showCreate",
+    "click .createUser": "createPup",
 
 
   },
 
 
 /// SIGNUP///
-createPup: function () {
+createPup: function (event) {
   event.preventDefault();
 
 ///PUT IN PUP'S INFO///
@@ -68,16 +77,17 @@ createPup: function () {
 /// ENABLES YOU TO TOGGLE CREATE PUP FORM TO SHOW OR HIDE////
 showCreate: function () {
 
-  console.log("");
-  this.$el.find('#createPup').toggleClass('show');
-  $(."login").toggleClass('hide');
-  createPup();
+  console.log("signup button works");
+  //this.$el.find('#createPup').toggleClass('show');
+  $(".logs").toggleClass('hide');
+  $(".userPup").show();
+  //createPup();
 
 },
 
 addOnePup: function (pup) {
   var pupView = new PupView ({model: pup});
-  this.$el.append(postView.render().el);
+  this.$el.append(pupView.render().el);
 
 },
 
@@ -85,11 +95,11 @@ addAllPups: function () {
 
   _.each(this.collection.models, this.addOnePup, this);
 }
-,
 
 
 
-}
 
 
-})
+
+
+});
