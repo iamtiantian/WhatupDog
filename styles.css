@@ -1,0 +1,14 @@
+.show {
+
+  display: block;
+}
+
+.hide {
+  display: none;
+
+}
+
+#createPup {
+
+  display: none;
+}

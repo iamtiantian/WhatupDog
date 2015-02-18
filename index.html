@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yorkiepoos are Adorbs!</title>
+  <script type="html/templatex" id="pupTmpl">
+
+    <h2><%= name %></h2>
+
+    <img src='<%= photo %>'>
+    <p><%= breed %></p>
+    <p><%= disposition %></p>
+
+    <button class="like">Like</button>
+    <button class="dislike">Dislike</button>
+
+</head>
+</script>
+<body>
+
+<section>
+  <div class="login">
+  <button class="signup">Signup</button>
+  <button class="login">Login</button>
+  </div>
+
+  <form action="" id="createPup">
+    <p><input type="text" name="newName" placeholder="Name"></p>
+    <p><input type="text" name="newPhoto" placeholder="Photo"></p>
+    <p><textarea name="newBreed" id="" cols="30" rows="10" placeholder="Breed"></textarea></p>
+
+    <p><input type="text" name="newDisposition" placeholder="Disposition"></p>
+    <p><button type="createNewAccount">Create New Account</button></p>
+  </form>
+
+
+</section>
+
+
+
+
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/backbone/backbone.js"></script>
+
+  <!-- app files -->
+  <script src="model.js"></script>
+  <script src="collection.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
