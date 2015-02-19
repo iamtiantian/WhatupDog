@@ -1,11 +1,9 @@
+var App = {}
+
 $(function () {
 
-  var pupCollection = new PupCollection();
-
- pupCollection.fetch().then(function () {
-   var appView = new Appview({collection: pupCollection});
- });
-
+  App.router = new AppRouter ();
+  Backbone.history.start();
 
 
 

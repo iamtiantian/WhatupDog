@@ -1,6 +1,10 @@
+
+
+
+
 var PupView = Backbone.View.extend ({
   template: _.template($('#pupTmpl').html()),
-  tagName: 'artcile',
+  tagName: 'section',
   initialize: function () {
     console.log("A pup view!")
 
@@ -66,7 +70,7 @@ createPup: function (event) {
   var newModelPup = new PupModel(newPup);
   newModelPup.save();
   this.collection.add(newModelPup);
-  this.addAllPups();
+  this.addOnePup(newModelPup);
   this.$el.find('#createPup').find('input, textarea').val('');
   this.showCreate();
 
@@ -89,17 +93,39 @@ addOnePup: function (pup) {
   var pupView = new PupView ({model: pup});
   this.$el.append(pupView.render().el);
 
-},
+ },
 
 addAllPups: function () {
 
   _.each(this.collection.models, this.addOnePup, this);
-}
-
-
-
-
-
-
+},
 
 });
+
+///TEST VIEW////
+// var testView = Backbone.View.extend ({
+//   el: $('.container'),
+//   initialize: function (){
+//
+//   },
+//
+//   render: function () {
+//     this.$el.html("<h1> This is a test. </h1>");
+//     return this
+//   }
+
+// });
+
+// var SignInView = Backbone.View.extend ({
+//
+//   tagName: 'section',
+//   initialize: function () {
+//     console.log("A pup view!")
+//
+//   },
+
+
+
+
+
+// });
