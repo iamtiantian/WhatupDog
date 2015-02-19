@@ -9,7 +9,7 @@ var AppRouter = Backbone.Router.extend ({
     "home": "home",
     "test": "testRouter",
     "" : "home", //// This will be the opening page
-    "dogs": "dogDisplay"
+    "dogs": "dogPound"
   },
 
   home: function () {
