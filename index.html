@@ -15,9 +15,42 @@
     <button class="like">Like</button>
     <button class="dislike">Dislike</button>
     <button class="singleDog">More about dog?</button>
+
     </div>
-</head>
 </script>
+
+<script type="text/dogtemplate" class="dogTmpl">
+      <h2><%= name %></h2>
+      <img src='<%= photo %>'>
+      <p><%= breed %></p>
+      <p><%= age %></p>
+      <p><%= gender %></p>
+      <p><%= disposition %></p>
+      <p><%= email%></p>
+      <button class="like">Like</button>|
+      <button class="dislike">Dislike</button>|
+</script>
+<script type="text/dogtemplate" class="dogTmpl">
+      <h2><%= name %></h2>
+      <img src='<%= photo %>'>
+      <p><%= breed %></p>
+      <p><%= age %></p>
+      <p><%= gender %></p>
+      <p><%= disposition %></p>
+      <p><%= email%></p>
+      <button class="like">Like</button>|
+      <button class="dislike">Dislike</button>|
+
+
+</script>
+
+
+</head>
+
+
+
+
+
 <body>
 
 
@@ -46,7 +79,7 @@
     <p><button class="createUser" type="createNewAccount">Create New Account</button></p>
   </form>
 </div>
-<div class="dogProfile">
+<div class="userdogProfile">
   <h1>THIS IS A USERDOG'S PROFILE</h1>
 <section>THIS WILL HAVE ALL THE PREVIOUS DOGS LIKED</section>
 <button class="moreDogs">Meet More Dogs?</button>

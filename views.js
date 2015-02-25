@@ -1,7 +1,4 @@
 
-
-
-
 var PupView = Backbone.View.extend ({
   template: _.template($('#pupTmpl').html()),
   tagName: 'article',
@@ -12,6 +9,7 @@ var PupView = Backbone.View.extend ({
 
   events: {
     "click .delete": "removePup",
+    "click .singleDog": ""
 
   },
 
@@ -28,7 +26,14 @@ var PupView = Backbone.View.extend ({
     this.$el.remove();
     this.model.destroy();
 
-  }
+  },
+
+  singleProfile: function () {
+    console.log("single dog profile button works!");
+
+
+  },
+
 
 
 
@@ -51,7 +56,8 @@ var Appview = Backbone.View.extend({
     "click .signup": "showCreate",
     "click .createUser": "createPup",
     "click .login": "loginForm",
-    "click .moreDogs": "dogPound"
+    "click .moreDogs": "dogPound",
+    " click .singleDog": "singleProfile"
 
 
   },
@@ -117,7 +123,7 @@ loginForm: function (event) {
 //
 // }
   $(".logs").hide();
-  $(".dogProfile").show();
+  $(".userdogProfile").show();
 },
 
 dogPound: function () {
@@ -131,6 +137,38 @@ dogPound: function () {
 
 
 });
+
+
+var dogProfileView = Backbone.View.extend ({
+  tagName: 'section',
+  template: _.template($('.dogTmpl').html()),
+  initialize: function () {
+    this.render();
+    $('')
+
+  },
+
+  events: {
+    "click .singleDog": "render"
+
+  },
+
+  render: function () {
+    console.log("more about dogs button works!")
+    var markup = this.template(this.model.toJSON());
+    this.$el.html(markup);
+
+    return this;
+
+  },
+
+
+
+
+
+})
+
+
 
 
 
@@ -156,9 +194,4 @@ dogPound: function () {
 //     console.log("Signup view!")
 //
 //   },
-
-
-
-
-
 // });

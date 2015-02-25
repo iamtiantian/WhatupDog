@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SpecRuner</title>
+  <link rel="stylesheet" href="../bower_components/mocha/mocha.css">
+</head>
+<body>
+
+<div id="mocha"></div>
+
+<script src="../bower_components/underscore/underscore.js"></script>
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/backbone/backbone.js"></script>
+
+<script src= "../bower_components/mocha/mocha.js"></script>
+<script>
+    mocha.setup('bdd');
+</script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/sinon.js/1.7.3/sinon-min.js"></script>
+<script src= "../bower_components/chai/chai.js"></script>
+<script>
+  var expect= chai.expect;
+  chai.use(sinon-chai);
+</script>
+
+
+  <script src="../model.js"></script>
+  <script src="../collection.js"></script>
+  <script src="../views.js"></script>
+
+
+  <script src="spec/test.spec.js"></script>
+  <script src="spec/Dog.Model.spec.js"></script>
+  <script src="spec/Dog.Collection.spec.js"></script>
+  <script src="spec/dogViews.spec.js"></script>
+
+
+  <script>mocha.run()</script>
+</body>
+</html>
